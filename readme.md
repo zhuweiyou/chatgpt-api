@@ -2,6 +2,23 @@
 
 此镜像封装网页版最新 chatgpt 接口
 
+## 部署方式
+
+### docker-compose
+
+```bash
+docker-compose up -d
+```
+
+### 自己装环境
+
+安装 `nodejs v18+`
+
+```bash
+npm install
+npm start
+```
+
 ## 文档
 
 ### BASE_URL
