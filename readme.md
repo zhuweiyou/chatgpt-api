@@ -4,7 +4,7 @@
 
 ## 部署方式
 
-### docker-compose
+### docker compose
 
 ```bash
 docker-compose up -d
@@ -37,7 +37,7 @@ npm start
 
 #### `/get_access_token` 登录获取 token
 
--   `email` openai 帐号 (不消耗那个 18 美元免费额度, 只用于登录)
+-   `email` openai 帐号 (不消耗 18 美元免费额度, 只用于登录)
 -   `password` openai 密码
 
 响应
@@ -48,7 +48,7 @@ npm start
 }
 ```
 
-大概 8 小时有效期, 建议开发者缓存至少 1 个小时以上, 而不是每次都调用登录
+大概 8 小时有效期, 建议开发者缓存至少 1 个小时以上, 而不是每次都调用获取
 
 #### `/send_message` 机器人对话
 
@@ -58,7 +58,7 @@ npm start
 -   `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `prompt_prefix` 可选. 默认为 'return the result in Chinese' 会让它尽量用中文回答
 -   `prompt_suffix` 可选. 默认为 空
--   `reverse_proxy` 可选. 反向代理服务器, 用于绕过 CF 人机验证, 默认内置了
+-   `reverse_proxy` 可选. 反向代理服务器, 用于绕过 cloudflare 人机验证, 默认内置
 
 响应
 
