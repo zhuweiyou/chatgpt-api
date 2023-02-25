@@ -22,7 +22,6 @@
     "axios": "^1.3.4",
     "chatgpt": "^4.7.2",
     "express": "^4.18.2",
-    "express-async-errors": "^3.1.1",
-    "undici": "^5.20.0"
+    "express-async-errors": "^3.1.1"
   }
 }
