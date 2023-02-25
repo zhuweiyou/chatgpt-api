@@ -45,7 +45,7 @@ app.post('/send_message', async (req, res) => {
     res.json({
         text: sendMessageRes.text,
         conversation_id: sendMessageRes.conversationId,
-        parent_message_id: sendMessageRes.parentMessageId,
+        parent_message_id: sendMessageRes.id,
     })
 })
 
