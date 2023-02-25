@@ -2,7 +2,7 @@ version: '3'
 
 services:
     chatgpt-api:
-        image: zhuweiyou/chatgpt-api:3
+        image: zhuweiyou/chatgpt-api:4
         restart: always
         ports:
             - 20001:3000
