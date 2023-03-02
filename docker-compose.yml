@@ -5,4 +5,4 @@ services:
         image: zhuweiyou/chatgpt-api:4
         restart: always
         ports:
-            - 20001:3000
+            - 3000:3000
