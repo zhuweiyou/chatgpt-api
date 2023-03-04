@@ -17,7 +17,7 @@ npm start
 
 ## 文档
 
-### Base URL 
+### Base URL
 
 <http://127.0.0.1:3000>
 
@@ -65,3 +65,8 @@ npm start
     "parent_message_id": "yyy"
 }
 ```
+
+## 感谢
+
+-   [transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api)
+-   [acheong08/OpenAIAuth](https://github.com/acheong08/OpenAIAuth)
