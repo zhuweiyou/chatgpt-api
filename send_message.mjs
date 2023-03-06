@@ -1,7 +1,7 @@
 import { ChatGPTUnofficialProxyAPI } from 'chatgpt'
 
 export async function send_message(req, res) {
-    const {
+    let {
         access_token,
         reverse_proxy,
         prompt,
@@ -9,10 +9,14 @@ export async function send_message(req, res) {
         prompt_suffix,
         conversation_id,
         parent_message_id,
-        timeout,
+        timeout = 0,
     } = req.body
     if (!access_token || !prompt) {
         throw new Error('invalid [access_token] or [prompt]')
+    }
+    timeout = Number(timeout)
+    if (isNaN(timeout)) {
+        throw new Error('invalid [timeout]')
     }
     const chatgpt_api = new ChatGPTUnofficialProxyAPI({
         accessToken: access_token,
@@ -24,7 +28,7 @@ export async function send_message(req, res) {
         parentMessageId: parent_message_id,
         promptPrefix: prompt_prefix ?? 'return the result in Chinese',
         promptSuffix: prompt_suffix,
-        timeoutMs: Number(timeout),
+        timeoutMs: timeout,
     })
     res.json({
         text: send_message_response.text,
