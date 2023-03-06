@@ -24,7 +24,7 @@ export async function send_message(req, res) {
         parentMessageId: parent_message_id,
         promptPrefix: prompt_prefix ?? 'return the result in Chinese',
         promptSuffix: prompt_suffix,
-        timeoutMs: timeout,
+        timeoutMs: Number(timeout),
     })
     res.json({
         text: send_message_response.text,
