@@ -50,6 +50,7 @@ npm start
 
 -   `access_token` 在 /get_access_token 中获取的 access_token
 -   `prompt` 提问内容
+-   `timeout` 可选. 超时时间(毫秒)
 -   `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `prompt_prefix` 可选. 默认为 'return the result in Chinese' 会让它尽量用中文回答

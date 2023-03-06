@@ -9,6 +9,7 @@ export async function send_message(req, res) {
         prompt_suffix,
         conversation_id,
         parent_message_id,
+        timeout,
     } = req.body
     if (!access_token || !prompt) {
         throw new Error('invalid [access_token] or [prompt]')
@@ -23,6 +24,7 @@ export async function send_message(req, res) {
         parentMessageId: parent_message_id,
         promptPrefix: prompt_prefix ?? 'return the result in Chinese',
         promptSuffix: prompt_suffix,
+        timeoutMs: timeout,
     })
     res.json({
         text: send_message_response.text,
