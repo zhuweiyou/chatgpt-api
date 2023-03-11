@@ -20,8 +20,7 @@ export async function send_message(req, res) {
 	}
 	const chatgpt_api = new ChatGPTUnofficialProxyAPI({
 		accessToken: access_token,
-		apiReverseProxyUrl:
-			reverse_proxy ?? 'https://chat.duti.tech/api/conversation',
+		apiReverseProxyUrl: reverse_proxy,
 	})
 	const send_message_response = await chatgpt_api.sendMessage(prompt, {
 		conversationId: conversation_id,
