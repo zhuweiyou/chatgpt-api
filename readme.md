@@ -25,7 +25,7 @@ npm start
 
 ```json
 {
-	"message": "错误消息"
+    "message": "错误消息"
 }
 ```
 
@@ -40,7 +40,7 @@ npm start
 
 ```json
 {
-	"access_token": "xxx"
+    "access_token": "xxx"
 }
 ```
 
@@ -61,9 +61,9 @@ npm start
 
 ```json
 {
-	"text": "ChatGPT的回答",
-	"conversation_id": "xxx",
-	"parent_message_id": "yyy"
+    "text": "ChatGPT的回答",
+    "conversation_id": "xxx",
+    "parent_message_id": "yyy"
 }
 ```
 
