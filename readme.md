@@ -4,13 +4,17 @@
 
 ## 部署
 
-需要 `部署在非中国IP` 或 `使用全局代理`
+需要 `部署在海外服务器` 或 `使用代理`, 否则可能无法正常调用 OpenAI
+
+### 方式一
 
 ```bash
-docker-compose up -d
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:latest
 ```
 
-或者自己装环境, 安装 `nodejs v18+` 和 `python 3.x`
+### 方式二
+
+安装 `nodejs 18.x` 和 `python 3.x` 环境
 
 ```bash
 pip3 install -r requirements.txt
@@ -34,10 +38,10 @@ npm start
 
 ### 所有 API 都使用 POST 请求
 
-#### `/get_access_token` 登录获取 token
+#### `/get_access_token` 获取 token
 
--   `email` openai 帐号 (不消耗 18 美元免费额度, 只用于登录)
--   `password` openai 密码
+-   `email` OpenAI 帐号 (不消耗免费额度, 也不需要花钱, 只用于登录获取 token)
+-   `password` OpenAI 密码
 
 #### 响应
 
@@ -47,7 +51,7 @@ npm start
 }
 ```
 
-> 大概 8 小时有效期, 建议开发者缓存至少 1 个小时以上, 而不是每次都调用获取
+> 大概几个小时有效期, 建议开发者缓存至少 1 个小时以上, 而不是每次都调用获取
 
 #### `/send_message` 向 ChatGPT 提问
 
@@ -72,5 +76,5 @@ npm start
 
 ## 感谢
 
--   [transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api) - 提供 ChatGPT 问答
--   [acheong08/OpenAIAuth](https://github.com/acheong08/OpenAIAuth) - 提供 OpenAI 登录
+-   [transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api) 提供 ChatGPT 问答
+-   [acheong08/OpenAIAuth](https://github.com/acheong08/OpenAIAuth) 提供 OpenAI 登录
