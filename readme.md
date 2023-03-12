@@ -1,16 +1,19 @@
 # chatgpt-api
 
-封装 OpenAI 网页版最新 ChatGPT 接口
+封装 OpenAI 网页版最新 ChatGPT 接口, 不需要使用 API Key, 完全免费
 
 ## 部署
+
+需要 `部署在非中国IP` 或 `使用全局代理`
 
 ```bash
 docker-compose up -d
 ```
 
-或者自己装环境, 安装 `nodejs v18+`
+或者自己装环境, 安装 `nodejs v18+` 和 `python 3.x`
 
 ```bash
+pip3 install -r requirements.txt
 npm install
 npm start
 ```
@@ -25,7 +28,7 @@ npm start
 
 ```json
 {
-	"message": "错误消息"
+    "message": "错误消息"
 }
 ```
 
@@ -40,7 +43,7 @@ npm start
 
 ```json
 {
-	"access_token": "xxx"
+    "access_token": "xxx"
 }
 ```
 
@@ -61,13 +64,13 @@ npm start
 
 ```json
 {
-	"text": "ChatGPT的回答",
-	"conversation_id": "xxx",
-	"parent_message_id": "yyy"
+    "text": "ChatGPT的回答",
+    "conversation_id": "xxx",
+    "parent_message_id": "yyy"
 }
 ```
 
 ## 感谢
 
--   [transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api)
--   [acheong08/OpenAIAuth](https://github.com/acheong08/OpenAIAuth)
+-   [transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api) - 提供 ChatGPT 问答
+-   [acheong08/OpenAIAuth](https://github.com/acheong08/OpenAIAuth) - 提供 OpenAI 登录
