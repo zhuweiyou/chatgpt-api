@@ -51,7 +51,11 @@ npm start
 }
 ```
 
-> 大概几个小时有效期, 建议开发者缓存至少 1 个小时以上, 而不是每次都调用获取
+> 有一段时间有效期, 建议开发者缓存至少 1 个小时以上, 而不是每次都调用获取
+
+如果获取失败, 临时方案可以手动登录网页版复制 `access_token`
+
+![截图](https://user-images.githubusercontent.com/8413791/225305658-188ec53c-c3ee-4ec6-9306-9ff9ce2c94af.png)
 
 #### `/send_message` 向 ChatGPT 提问
 
