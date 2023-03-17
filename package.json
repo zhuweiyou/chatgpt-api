@@ -9,9 +9,9 @@
         "start": "node index.mjs"
     },
     "dependencies": {
-        "chatgpt": "^5.0.10",
+        "chatgpt": "^5.1.1",
         "express": "^4.18.2",
         "express-async-errors": "^3.1.1",
-        "python-shell": "^5.0.0"
+        "openai-authenticator": "^0.0.3"
     }
 }
