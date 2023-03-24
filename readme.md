@@ -9,7 +9,7 @@
 ### 方式一
 
 ```bash
-docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230317
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230324
 ```
 
 ### 方式二
