@@ -2,14 +2,20 @@
 
 封装 OpenAI 网页版最新 ChatGPT 接口, 不需要使用 API Key, 完全免费
 
-## 部署
+## 更新日志
+
+### `20230408`
+
+- `reverse_proxy` 内置为 `https://api.pawan.krd/backend-api/conversation`
+
+## 部署方式
 
 建议 `部署在海外服务器` 或 `使用代理`, 否则可能无法正常调用 OpenAI
 
 ### 方式一
 
 ```bash
-docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230324
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230408
 ```
 
 ### 方式二
@@ -21,7 +27,9 @@ npm install
 npm start
 ```
 
-## 使用
+程序会打印 `Listening on http://localhost:3000` 表示启动成功
+
+## 使用文档
 
 ### 第一步
 
@@ -33,7 +41,9 @@ npm start
 
 ### 第二步
 
-#### POST <http://127.0.0.1:3000/send_message> 向 ChatGPT 提问
+#### POST <http://localhost:3000/send_message> 向 ChatGPT 提问
+
+body 格式为 `x-www-form-urlencoded`
 
 不消耗免费额度, 也不需要花钱
 
@@ -45,8 +55,8 @@ npm start
 -   `prompt_prefix` 可选. 默认为 `return the result in Chinese` 会让它尽量用中文回答
 -   `prompt_suffix` 可选. 默认为 `空`
 -   `reverse_proxy` 可选. 反向代理服务器, 用于绕过 cloudflare 人机验证
-    - 默认内置 `https://bypass.churchless.tech/api/conversation` 5 req / 10 seconds by IP
-    - 出现问题尝试更换 `https://api.pawan.krd/backend-api/conversation` 50 req / 15 seconds (~3 r/s)
+    - 默认内置 `https://api.pawan.krd/backend-api/conversation` 50 req / 15 seconds (~3 r/s)
+    - 如果出现报错, 尝试更换 `https://bypass.churchless.tech/api/conversation` 5 req / 10 seconds by IP
 
 #### 成功响应
 
@@ -67,7 +77,3 @@ npm start
     "message": "错误消息"
 }
 ```
-
-## 其它
-
--   [go-cqhttp](https://github.com/go-cqhttp) 有了 ChatGPT, 何不搭建一个 QQ 机器人?

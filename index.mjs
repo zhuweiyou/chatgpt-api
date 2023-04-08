@@ -9,4 +9,4 @@ app.use(express.urlencoded({ extended: false }))
 app.post('/send_message', send_message)
 app.use(catch_error)
 
-app.listen(3000)
+app.listen(3000, () => console.log('Listening on http://localhost:3000'))

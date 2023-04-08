@@ -3,7 +3,7 @@ import { ChatGPTUnofficialProxyAPI } from 'chatgpt'
 export async function send_message(req, res) {
     const {
         access_token,
-        reverse_proxy,
+        reverse_proxy = 'https://api.pawan.krd/backend-api/conversation',
         prompt,
         prompt_prefix = 'return the result in Chinese',
         prompt_suffix,
