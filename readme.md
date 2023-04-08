@@ -39,9 +39,9 @@ BASE_URL `http://localhost:3000`
 
 POST Body 格式为 `x-www-form-urlencoded`
 
-### 第一步
+### 第一步: 获取网页版 access_token
 
-#### 方式一: POST `/get_access_token` 登录网页版获取 access_token
+#### 方式一: POST `/get_access_token` 登录获取
 
 -   `email` OpenAI 帐号 (不支持谷歌/微软授权登录)
 -   `password` OpenAI 密码
@@ -59,15 +59,15 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 > 获取成功之后建议缓存本地, 不用每次都调用获取
 
-#### 方式二: 如果以上方式获取失败, 可以手动登录网页版获取 access_token
+#### 方式二: 如果以上方式获取失败, 或者你是谷歌/微软帐号注册的 OpenAI, 可以手动登录获取
 
 访问 <https://chat.openai.com/chat> 成功登录之后, 打开浏览器开发者工具 (F12) -> 刷新页面- > Network 找到 `/api/auth/session` 请求, 复制 `accessToken` 存到你本地配置
 
 ![截图](https://user-images.githubusercontent.com/8413791/225305658-188ec53c-c3ee-4ec6-9306-9ff9ce2c94af.png)
 
-### 第二步
+### 第二步: 向 ChatGPT 提问
 
-#### POST `/send_message` 向 ChatGPT 提问
+#### POST `/send_message`
 
 不消耗免费额度, 也不需要花钱
 
@@ -94,7 +94,7 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 ![send_message截图](https://user-images.githubusercontent.com/8413791/226363534-5c856f41-1acb-4615-bcbd-b169d3f294e1.png)
 
-#### 失败响应
+### 以上所有 API 失败响应
 
 ```json
 {
