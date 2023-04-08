@@ -2,6 +2,10 @@ import axios from 'axios'
 
 export async function get_access_token(req, res) {
     const { email, password } = req.body
+    if (!email || !password) {
+        throw new Error('invalid [email] or [password]')
+    }
+
     const { data } = await axios({
         method: 'POST',
         url: 'https://chat.gateway.do/api/auth/login',
