@@ -31,7 +31,7 @@
 ### 方式一
 
 ```bash
-docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230409
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230411
 ```
 
 ### 方式二
