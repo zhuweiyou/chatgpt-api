@@ -96,6 +96,8 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 ### 以上所有 API 失败响应
 
+HTTP Status Code: 500
+
 ```json
 {
     "message": "错误消息"
