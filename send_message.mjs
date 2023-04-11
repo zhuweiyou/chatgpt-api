@@ -5,7 +5,7 @@ export async function send_message(req, res) {
         access_token,
         reverse_proxy = 'https://api.pawan.krd/backend-api/conversation',
         prompt,
-        prompt_prefix = 'return the result in Chinese',
+        prompt_prefix,
         prompt_suffix,
         conversation_id,
         parent_message_id,

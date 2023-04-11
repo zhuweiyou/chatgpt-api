@@ -76,7 +76,7 @@ POST Body 格式为 `x-www-form-urlencoded`
 -   `timeout` 可选. 超时时间(毫秒), 默认无限等待
 -   `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
--   `prompt_prefix` 可选. 默认为 `return the result in Chinese` 会让它尽量用中文回答
+-   `prompt_prefix` 可选. 默认为 `空`. 比如你可以传入 `return the result in Chinese` 它会尽量用中文回答
 -   `prompt_suffix` 可选. 默认为 `空`
 -   `reverse_proxy` 可选. 反向代理服务器, 用于绕过 cloudflare 人机验证
     -   默认内置 `https://api.pawan.krd/backend-api/conversation` 50 req / 15 seconds (~3 r/s)
