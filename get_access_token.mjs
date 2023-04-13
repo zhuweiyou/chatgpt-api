@@ -12,8 +12,8 @@ export async function get_access_token(req, res) {
         }),
     })
     const json = await response.json()
-    if (!json.accessToken) {
-        throw new Error(json.detail || 'failed to get [access_token]')
+    if (!json || !json.accessToken) {
+        throw new Error(json?.detail || 'failed to get [access_token]')
     }
 
     res.json({ access_token: json.accessToken, expires: json.expires })
