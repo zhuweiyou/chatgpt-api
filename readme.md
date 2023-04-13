@@ -7,6 +7,7 @@
 ### 最近更新 20230413
 
 - `/send_message` 增加 `model` 参数. 默认 `gpt-3.5-turbo`, 如果你是 ChatGPT Plus 账号可以传入 `gpt-4` 来切换模型
+- 增加 API 演示站点 <https://zhuweiyou-chatgpt-api.vercel.app>
 
 ### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
