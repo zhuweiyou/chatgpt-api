@@ -4,31 +4,11 @@
 
 ## 更新日志
 
-<details>
-  <summary>20230413</summary>
+### 最近更新 20230413
 
 - `/send_message` 增加 `model` 参数. 默认 `gpt-3.5-turbo`, 如果你是 ChatGPT Plus 账号可以传入 `gpt-4` 来切换模型
-</details>
 
-<details>
-  <summary>20230411</summary>
-
-- 打印请求日志
-- 失败时使用 status 500, 以区分错误请求
-- prompt_prefix 默认为空
-</details>
-
-<details>
-  <summary>20230409</summary>
-
--  `增加` 使用 API 登录 `/get_access_token`
-</details>
-
-<details>
-  <summary>20230408</summary>
-
--  `修改` `reverse_proxy` 内置为 `https://api.pawan.krd/backend-api/conversation`
-</details>
+### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
 ## 部署方式
 
