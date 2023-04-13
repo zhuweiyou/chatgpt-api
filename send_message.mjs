@@ -10,16 +10,18 @@ export async function send_message(req, res) {
         conversation_id,
         parent_message_id,
         timeout = 0,
+        model = 'gpt-3.5-turbo',
     } = req.body
     if (!access_token || !prompt) {
         throw new Error('invalid [access_token] or [prompt]')
     }
 
-    const chatgpt_api = new ChatGPTUnofficialProxyAPI({
+    const chatgpt = new ChatGPTUnofficialProxyAPI({
         accessToken: access_token,
         apiReverseProxyUrl: reverse_proxy,
+        model,
     })
-    const send_message_response = await chatgpt_api.sendMessage(prompt, {
+    const response = await chatgpt.sendMessage(prompt, {
         conversationId: conversation_id,
         parentMessageId: parent_message_id,
         promptPrefix: prompt_prefix,
@@ -27,8 +29,8 @@ export async function send_message(req, res) {
         timeoutMs: Number(timeout),
     })
     res.json({
-        text: send_message_response.text,
-        conversation_id: send_message_response.conversationId,
-        parent_message_id: send_message_response.id,
+        text: response.text,
+        conversation_id: response.conversationId,
+        parent_message_id: response.id,
     })
 }

@@ -4,25 +4,12 @@
 
 ## 更新日志
 
-<details>
-  <summary>20230411</summary>
+### 最近更新 20230413
 
--   打印请求日志
--   失败时使用 status 500, 以区分错误请求
--   prompt_prefix 默认为空
-</details>
+- `/send_message` 增加 `model` 参数. 默认 `gpt-3.5-turbo`, 如果你是 ChatGPT Plus 账号可以传入 `gpt-4` 来切换模型
+- 增加 API 演示站点 <https://zhuweiyou-chatgpt-api.vercel.app>
 
-<details>
-  <summary>20230409</summary>
-
--   `增加` 使用 API 登录 `/get_access_token`
-</details>
-
-<details>
-  <summary>20230408</summary>
-
--   `修改` `reverse_proxy` 内置为 `https://api.pawan.krd/backend-api/conversation`
-</details>
+### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
 ## 部署方式
 
@@ -31,7 +18,7 @@
 ### 方式一
 
 ```bash
-docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230411
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230413
 ```
 
 ### 方式二
@@ -39,7 +26,7 @@ docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230411
 安装 `nodejs 18.x` 环境
 
 ```bash
-npm install
+npm install --production
 npm start
 ```
 
@@ -94,14 +81,16 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 -   `access_token` 在 [第一步] 中获取的 access_token
 -   `prompt` 提问内容
+-   `model` 可选. 默认 `gpt-3.5-turbo`, 如果你是 ChatGPT Plus 账号可以传入 `gpt-4` 来切换模型
 -   `timeout` 可选. 超时时间(毫秒), 默认无限等待
 -   `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `prompt_prefix` 可选. 默认为 `空`. 比如你可以传入 `return the result in Chinese` 它会尽量用中文回答
 -   `prompt_suffix` 可选. 默认为 `空`
 -   `reverse_proxy` 可选. 反向代理服务器, 用于绕过 cloudflare 人机验证
-    -   默认内置 `https://api.pawan.krd/backend-api/conversation` 50 req / 15 seconds (~3 r/s)
-    -   如果出现报错, 尝试更换 `https://bypass.churchless.tech/api/conversation` 5 req / 10 seconds by IP
+    1. `https://api.pawan.krd/backend-api/conversation` (当前默认, 如果出现错误尝试更换以下两个)
+    2. `https://bypass.churchless.tech/api/conversation`
+    3. `https://chat.gateway.do/api/conversation`
 
 #### 成功响应
 

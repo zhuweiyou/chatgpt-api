@@ -1,4 +1,4 @@
-export function home(req, res) {
+export function home_page(req, res) {
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     res.send(`
 <!DOCTYPE html>

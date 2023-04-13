@@ -1,22 +1,20 @@
-import axios from 'axios'
-
 export async function get_access_token(req, res) {
     const { email, password } = req.body
     if (!email || !password) {
         throw new Error('invalid [email] or [password]')
     }
 
-    const { data } = await axios({
+    const response = await fetch('https://chat.gateway.do/api/auth/login', {
         method: 'POST',
-        url: 'https://chat.gateway.do/api/auth/login',
-        data: new URLSearchParams({
+        body: new URLSearchParams({
             username: email,
             password,
         }),
     })
-    if (!data.accessToken) {
-        throw new Error('failed to get [access_token]')
+    const json = await response.json()
+    if (!json?.accessToken) {
+        throw new Error(json?.detail || 'failed to get [access_token]')
     }
 
-    res.json({ access_token: data.accessToken, expires: data.expires })
+    res.json({ access_token: json.accessToken, expires: json.expires })
 }
