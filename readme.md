@@ -5,6 +5,12 @@
 ## 更新日志
 
 <details>
+  <summary>20230413</summary>
+
+- `/send_message` 增加 `model` 参数. 默认 `gpt-3.5-turbo`, 如果你是 ChatGPT Plus 账号可以传入 `gpt-4` 来切换模型
+</details>
+
+<details>
   <summary>20230411</summary>
 
 - 打印请求日志
@@ -31,7 +37,7 @@
 ### 方式一
 
 ```bash
-docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230411
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230413
 ```
 
 ### 方式二
@@ -76,7 +82,7 @@ POST Body 格式为 `x-www-form-urlencoded`
 访问 <https://chat.openai.com/chat> 成功登录之后, 打开浏览器开发者工具 (F12) -> 刷新页面- > Network
 找到 `/api/auth/session` 请求, 复制 `accessToken` 存到你本地配置
 
-![截图](https://user-images.githubusercontent.com/8413791/225305658-188ec53c-c3ee-4ec6-9306-9ff9ce2c94af.png)
+![手动获取accessToken截图](https://user-images.githubusercontent.com/8413791/225305658-188ec53c-c3ee-4ec6-9306-9ff9ce2c94af.png)
 
 ### 第二步: 向 ChatGPT 提问
 
@@ -84,9 +90,9 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 不消耗免费额度, 也不需要花钱
 
-- `access_token` 在 [第一步] 中获取的 access_token
+- `access_token` 在 **第一步** 中获取的 access_token
 - `prompt` 提问内容
-- `model` 可选. 默认 `gpt-3.5-turbo`, 如果你是 plus 账号可以传入 `gpt-4` 来切换模型
+- `model` 可选. 默认 `gpt-3.5-turbo`, 如果你是 ChatGPT Plus 账号可以传入 `gpt-4` 来切换模型
 - `timeout` 可选. 超时时间(毫秒), 默认无限等待
 - `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 - `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
