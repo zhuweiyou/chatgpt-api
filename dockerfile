@@ -5,6 +5,6 @@ RUN apk add -U tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && 
 
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN npm install --production
 
 CMD ["npm", "start"]
