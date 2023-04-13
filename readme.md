@@ -26,7 +26,7 @@ docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230413
 安装 `nodejs 18.x` 环境
 
 ```bash
-npm install
+npm install --production
 npm start
 ```
 
