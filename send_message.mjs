@@ -10,6 +10,7 @@ export async function send_message(req, res) {
         conversation_id,
         parent_message_id,
         timeout = 0,
+        model = 'gpt-3.5-turbo',
     } = req.body
     if (!access_token || !prompt) {
         throw new Error('invalid [access_token] or [prompt]')
@@ -18,6 +19,7 @@ export async function send_message(req, res) {
     const chatgpt_api = new ChatGPTUnofficialProxyAPI({
         accessToken: access_token,
         apiReverseProxyUrl: reverse_proxy,
+        model,
     })
     const send_message_response = await chatgpt_api.sendMessage(prompt, {
         conversationId: conversation_id,

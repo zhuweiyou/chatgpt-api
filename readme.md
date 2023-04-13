@@ -86,6 +86,7 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 - `access_token` 在 [第一步] 中获取的 access_token
 - `prompt` 提问内容
+- `model` 可选. 默认 `gpt-3.5-turbo`, 如果你是 plus 账号可以传入 `gpt-4` 来切换模型
 - `timeout` 可选. 超时时间(毫秒), 默认无限等待
 - `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 - `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
