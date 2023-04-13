@@ -45,6 +45,14 @@ npm start
 
 程序会打印 `Listening on http://localhost:3000` 表示启动成功
 
+### 方式三
+
+自己部署太麻烦, 想要快速测试? 可以将文档中的 `BASE_URL` 更换成以下地址
+
+<https://zhuweiyou-chatgpt-api.vercel.app>
+
+> API 演示站点, 仅供测试使用, 不保证稳定性
+
 ## 使用文档
 
 BASE_URL `http://localhost:3000`
