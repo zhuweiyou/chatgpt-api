@@ -7,21 +7,21 @@
 <details>
   <summary>20230411</summary>
 
-- 打印请求日志
-- 失败时使用 status 500, 以区分错误请求
-- prompt_prefix 默认为空
+-   打印请求日志
+-   失败时使用 status 500, 以区分错误请求
+-   prompt_prefix 默认为空
 </details>
 
 <details>
   <summary>20230409</summary>
 
--  `增加` 使用 API 登录 `/get_access_token`
+-   `增加` 使用 API 登录 `/get_access_token`
 </details>
 
 <details>
   <summary>20230408</summary>
 
--  `修改` `reverse_proxy` 内置为 `https://api.pawan.krd/backend-api/conversation`
+-   `修改` `reverse_proxy` 内置为 `https://api.pawan.krd/backend-api/conversation`
 </details>
 
 ## 部署方式
@@ -45,6 +45,14 @@ npm start
 
 程序会打印 `Listening on http://localhost:3000` 表示启动成功
 
+### 方式三
+
+自己部署太麻烦, 想要快速测试? 可以将文档中的 `BASE_URL` 更换成以下地址
+
+<https://zhuweiyou-chatgpt-api.vercel.app>
+
+> API 演示站点, 仅供测试使用, 不保证稳定性
+
 ## 使用文档
 
 BASE_URL `http://localhost:3000`
@@ -55,15 +63,15 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 #### 方式一: POST `/get_access_token` 登录获取
 
-- `email` OpenAI 帐号 (不支持谷歌/微软授权登录)
-- `password` OpenAI 密码
+-   `email` OpenAI 帐号 (不支持谷歌/微软授权登录)
+-   `password` OpenAI 密码
 
 响应
 
 ```json
 {
-  "access_token": "token内容",
-  "expires": "过期时间"
+    "access_token": "token内容",
+    "expires": "过期时间"
 }
 ```
 
@@ -84,24 +92,24 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 不消耗免费额度, 也不需要花钱
 
-- `access_token` 在 [第一步] 中获取的 access_token
-- `prompt` 提问内容
-- `timeout` 可选. 超时时间(毫秒), 默认无限等待
-- `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
-- `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
-- `prompt_prefix` 可选. 默认为 `空`. 比如你可以传入 `return the result in Chinese` 它会尽量用中文回答
-- `prompt_suffix` 可选. 默认为 `空`
-- `reverse_proxy` 可选. 反向代理服务器, 用于绕过 cloudflare 人机验证
-    - 默认内置 `https://api.pawan.krd/backend-api/conversation` 50 req / 15 seconds (~3 r/s)
-    - 如果出现报错, 尝试更换 `https://bypass.churchless.tech/api/conversation` 5 req / 10 seconds by IP
+-   `access_token` 在 [第一步] 中获取的 access_token
+-   `prompt` 提问内容
+-   `timeout` 可选. 超时时间(毫秒), 默认无限等待
+-   `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
+-   `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
+-   `prompt_prefix` 可选. 默认为 `空`. 比如你可以传入 `return the result in Chinese` 它会尽量用中文回答
+-   `prompt_suffix` 可选. 默认为 `空`
+-   `reverse_proxy` 可选. 反向代理服务器, 用于绕过 cloudflare 人机验证
+    -   默认内置 `https://api.pawan.krd/backend-api/conversation` 50 req / 15 seconds (~3 r/s)
+    -   如果出现报错, 尝试更换 `https://bypass.churchless.tech/api/conversation` 5 req / 10 seconds by IP
 
 #### 成功响应
 
 ```json
 {
-  "text": "ChatGPT的回答",
-  "conversation_id": "xxx",
-  "parent_message_id": "yyy"
+    "text": "ChatGPT的回答",
+    "conversation_id": "xxx",
+    "parent_message_id": "yyy"
 }
 ```
 
@@ -113,6 +121,6 @@ HTTP Status Code: 500
 
 ```json
 {
-  "message": "错误消息"
+    "message": "错误消息"
 }
 ```
