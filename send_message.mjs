@@ -5,8 +5,6 @@ export async function send_message(req, res) {
         access_token,
         reverse_proxy = 'https://api.pawan.krd/backend-api/conversation',
         prompt,
-        prompt_prefix,
-        prompt_suffix,
         conversation_id,
         parent_message_id,
         timeout = 0,
@@ -24,8 +22,6 @@ export async function send_message(req, res) {
     const response = await chatgpt.sendMessage(prompt, {
         conversationId: conversation_id,
         parentMessageId: parent_message_id,
-        promptPrefix: prompt_prefix,
-        promptSuffix: prompt_suffix,
         timeoutMs: Number(timeout),
     })
     res.json({
