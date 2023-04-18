@@ -86,9 +86,9 @@ POST Body 格式为 `x-www-form-urlencoded`
 -   `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `reverse_proxy` 可选. 反向代理服务器, 用于绕过 cloudflare 人机验证
-    1. `https://api.pawan.krd/backend-api/conversation` (当前默认, 如果出现错误尝试更换以下两个)
+    1. `https://api.pawan.krd/backend-api/conversation` (当前默认, 如果出现错误尝试更换以下几个)
     2. `https://bypass.churchless.tech/api/conversation`
-    3. `https://chat.gateway.do/api/conversation`
+    3. `https://ai.fakeopen.com/api/conversation` (新)
 
 #### 成功响应
 
