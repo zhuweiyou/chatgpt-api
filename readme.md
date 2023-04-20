@@ -4,10 +4,10 @@
 
 ## 更新日志
 
-### 最近更新 20230413
+### 最新更新 20230420
 
-- `/send_message` 增加 `model` 参数. 默认 `gpt-3.5-turbo`, 如果你是 ChatGPT Plus 账号可以传入 `gpt-4` 来切换模型
-- 增加 API 演示站点 <https://zhuweiyou-chatgpt-api.vercel.app>
+- 更换默认 `reverse_proxy` 为 `https://ai.fakeopen.com/api/conversation`
+- 新增获取 `access_token` 方式三
 
 ### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
@@ -18,7 +18,7 @@
 ### 方式一
 
 ```bash
-docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230413
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230420
 ```
 
 ### 方式二
@@ -38,7 +38,7 @@ npm start
 
 <https://zhuweiyou-chatgpt-api.vercel.app>
 
-> API 演示站点, 仅供测试使用, 不保证稳定性
+> API 演示站点, 仅供测试
 
 ## 使用文档
 
@@ -49,6 +49,9 @@ POST Body 格式为 `x-www-form-urlencoded`
 ### 第一步: 获取网页版 access_token
 
 #### 方式一: POST `/get_access_token` 登录获取
+
+<details>
+  <summary><del>暂不可用</del></summary>
 
 -   `email` OpenAI 帐号 (不支持谷歌/微软授权登录)
 -   `password` OpenAI 密码
@@ -65,13 +68,18 @@ POST Body 格式为 `x-www-form-urlencoded`
 ![get_access_token截图](https://user-images.githubusercontent.com/8413791/230726142-7bc08fad-a46b-497b-be57-1ca4cd57e4f8.png)
 
 > 获取成功之后建议缓存本地, 不用每次都调用获取
+</details>
 
-#### 方式二: 如果以上方式获取失败, 或者你是谷歌/微软帐号注册的 OpenAI, 可以手动登录获取
+#### 方式二: 如果方式一获取失败, 或者你是谷歌/微软帐号注册的 OpenAI, 可以手动登录获取
 
 访问 <https://chat.openai.com/chat> 成功登录之后, 打开浏览器开发者工具 (F12) -> 刷新页面- > Network
 找到 `/api/auth/session` 请求, 复制 `accessToken` 存到你本地配置
 
 ![截图](https://user-images.githubusercontent.com/8413791/225305658-188ec53c-c3ee-4ec6-9306-9ff9ce2c94af.png)
+
+#### 方式三: 如果方式二你上不去官网, 可以尝试以下方式更简单获取
+
+[点击这里获取 token](https://ai.fakeopen.com/auth)
 
 ### 第二步: 向 ChatGPT 提问
 
@@ -86,9 +94,8 @@ POST Body 格式为 `x-www-form-urlencoded`
 -   `conversation_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `parent_message_id` 可选. 前一次 /send_message 的结果中返回, 用于上下文连续会话
 -   `reverse_proxy` 可选. 反向代理服务器, 用于绕过 cloudflare 人机验证
-    1. `https://api.pawan.krd/backend-api/conversation` (当前默认, 如果出现错误尝试更换以下几个)
-    2. `https://bypass.churchless.tech/api/conversation`
-    3. `https://ai.fakeopen.com/api/conversation` (新)
+    1. `https://ai.fakeopen.com/api/conversation` (当前默认)
+    2. `https://api.pawan.krd/backend-api/conversation`
 
 #### 成功响应
 
