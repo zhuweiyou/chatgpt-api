@@ -4,10 +4,9 @@
 
 ## 更新日志
 
-### 最新更新 20230420
+### 最新更新 20230424
 
-- 更换默认 `reverse_proxy` 为 `https://ai.fakeopen.com/api/conversation`
-- 新增获取 `access_token` 方式三
+- 修复 API 获取 `access_token`
 
 ### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
@@ -18,7 +17,7 @@
 ### 方式一
 
 ```bash
-docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230420
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230424
 ```
 
 ### 方式二
