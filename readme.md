@@ -6,8 +6,10 @@
 
 ### 最新更新 20230424
 
-- 修复 API 获取 `access_token`
-- 完善文档
+- `修复` API 获取 access_token
+- `增加` vercel 部署说明
+- `检查` Node.js 环境
+- `完善` 文档
 
 ### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
