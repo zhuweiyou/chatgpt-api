@@ -33,11 +33,13 @@ npm start
 
 ### 方式三
 
-自己部署太麻烦, 想要快速测试? 可以将文档中的 `BASE_URL` 更换成以下地址
+Fork 本项目, 在 [vercel.com](https://vercel.com) 添加你自己的仓库, 创建一个 Node.js 应用, 即可一键完成部署
+
+> vercel 的云函数免费版限制 10 秒超时, 回答很长的内容不一定好用, 还是建议部署到你自己机器
+
+想要快速测试? 可以将文档中的 `BASE_URL` 更换成我部署在 vercel 的地址
 
 <https://zhuweiyou-chatgpt-api.vercel.app>
-
-> API 演示站点, 仅供测试
 
 ## 使用文档
 
