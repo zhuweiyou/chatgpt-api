@@ -8,8 +8,7 @@
 
 - `修复` API 获取 access_token
 - `增加` vercel 部署说明
-- `检查` Node.js 环境对 fetch 函数的支持
-- `完善` 文档
+- `检查` Node.js 环境对 fetch 函数的支持 [#12](https://github.com/zhuweiyou/chatgpt-api/issues/22)
 
 ### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
