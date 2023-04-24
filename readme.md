@@ -60,8 +60,7 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 ```json
 {
-    "access_token": "token内容",
-    "expires": "过期时间"
+    "access_token": "token内容"
 }
 ```
 
