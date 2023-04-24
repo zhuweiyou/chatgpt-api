@@ -64,9 +64,9 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 ![get_access_token截图](https://user-images.githubusercontent.com/8413791/230726142-7bc08fad-a46b-497b-be57-1ca4cd57e4f8.png)
 
-> 获取成功之后建议缓存本地, 不用每次都调用获取
+获取成功之后建议缓存本地, 不用每次都调用获取
 
-如果出现 `fetch failed` 大概率是墙了, 你也可以 Fork [zhuweiyou/chatgpt-auth](https://github.com/zhuweiyou/chatgpt-auth) 自建 auth 服务
+> 如果出现 `fetch failed` 大概率是墙了, 你也可以 Fork [zhuweiyou/chatgpt-auth](https://github.com/zhuweiyou/chatgpt-auth) 自建 auth 服务
 
 #### 方式二: 如果方式一获取失败, 或者你是谷歌/微软帐号注册的 OpenAI, 可以手动登录获取
 
