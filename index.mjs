@@ -6,6 +6,11 @@ import { send_message } from './send_message.mjs'
 import { get_access_token } from './get_access_token.mjs'
 import { catch_error } from './catch_error.mjs'
 
+if (!globalThis.fetch) {
+    console.error('Node.js 版本太低, 请使用 v18+')
+    process.exit(1)
+}
+
 const app = express()
 app.use(morgan('combined'))
 app.use(express.urlencoded({ extended: false }))
