@@ -7,6 +7,7 @@
 ### 最新更新 20230424
 
 - 修复 API 获取 `access_token`
+- 完善文档
 
 ### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
