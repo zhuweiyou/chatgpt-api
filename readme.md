@@ -4,10 +4,11 @@
 
 ## 更新日志
 
-### 最新更新 20230420
+### 最新更新 20230424
 
-- 更换默认 `reverse_proxy` 为 `https://ai.fakeopen.com/api/conversation`
-- 新增获取 `access_token` 方式三
+- `修复` API 获取 access_token
+- `增加` vercel 部署说明
+- `检查` Node.js 环境对 fetch 函数的支持 [#12](https://github.com/zhuweiyou/chatgpt-api/issues/22)
 
 ### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
 
@@ -18,7 +19,7 @@
 ### 方式一
 
 ```bash
-docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230420
+docker run -d -p 3000:3000 zhuweiyou/chatgpt-api:20230424
 ```
 
 ### 方式二
@@ -34,11 +35,13 @@ npm start
 
 ### 方式三
 
-自己部署太麻烦, 想要快速测试? 可以将文档中的 `BASE_URL` 更换成以下地址
+Fork 本项目, 在 [vercel.com](https://vercel.com) 添加你自己的仓库, 创建一个 Node.js 应用, 即可一键完成部署
+
+> vercel 的云函数免费版限制 10 秒超时, 回答很长的内容不一定好用, 还是建议部署到你自己机器
+
+想要快速测试? 可以将文档中的 `BASE_URL` 更换成我部署在 vercel 的地址
 
 <https://zhuweiyou-chatgpt-api.vercel.app>
-
-> API 演示站点, 仅供测试
 
 ## 使用文档
 
@@ -50,25 +53,22 @@ POST Body 格式为 `x-www-form-urlencoded`
 
 #### 方式一: POST `/get_access_token` 登录获取
 
-<details>
-  <summary><del>暂不可用</del></summary>
-
 -   `email` OpenAI 帐号 (不支持谷歌/微软授权登录)
 -   `password` OpenAI 密码
 
-响应
+成功响应
 
 ```json
 {
-    "access_token": "token内容",
-    "expires": "过期时间"
+    "access_token": "token内容"
 }
 ```
 
 ![get_access_token截图](https://user-images.githubusercontent.com/8413791/230726142-7bc08fad-a46b-497b-be57-1ca4cd57e4f8.png)
 
-> 获取成功之后建议缓存本地, 不用每次都调用获取
-</details>
+获取成功之后建议缓存本地, 不用每次都调用获取
+
+> 如果出现 `fetch failed` 大概率是墙了, 你也可以 Fork [zhuweiyou/chatgpt-auth](https://github.com/zhuweiyou/chatgpt-auth) 自建 auth 服务
 
 #### 方式二: 如果方式一获取失败, 或者你是谷歌/微软帐号注册的 OpenAI, 可以手动登录获取
 
