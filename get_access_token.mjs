@@ -4,6 +4,7 @@ export async function get_access_token(req, res) {
         throw new Error('invalid [email] or [password]')
     }
 
+    // 你也可以 Fork https://github.com/zhuweiyou/chatgpt-auth 自建 auth 服务
     const response = await fetch('https://chatgpt-auth.vercel.app/api', {
         method: 'POST',
         headers: {
