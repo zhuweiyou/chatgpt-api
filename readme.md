@@ -2,19 +2,19 @@
 
 封装 OpenAI 网页版最新 ChatGPT 接口, 不需要使用 API Key, 完全免费
 
-## 更新日志
+- - -
 
-### 最新更新 20230424
+**_最近没有精力维护, 请移步以下项目_**
 
-- `修复` API 获取 access_token
-- `增加` vercel 部署说明
-- `检查` Node.js 环境对 fetch 函数的支持 [#12](https://github.com/zhuweiyou/chatgpt-api/issues/22)
+-   [acheong08/OpenAIAuth](https://github.com/acheong08/OpenAIAuth) - 搭建 OpenAI 登录服务
 
-### [历史更新](https://github.com/zhuweiyou/chatgpt-api/releases)
+-   [pengzhile/pandora](https://github.com/pengzhile/pandora) - 搭建 OpenAI 反代网站
 
-## 部署方式
+-   [acheong08/ChatGPT](https://github.com/acheong08/ChatGPT) - 基于 Python 的 ChatGPT API
 
-建议 `部署在海外服务器` 或 `使用代理`, 否则可能无法正常调用 OpenAI
+-   [transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api) - 基于 Node.js 的 ChatGPT API
+
+- - -
 
 ### 方式一
 
